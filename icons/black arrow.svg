@@ -1,0 +1,7 @@
+<svg viewBox="0 0 32.5491 32.5488" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.549072" height="32.548828" fill="none" customFrame="#000000">
+	<rect id="Frame" width="19.265467" height="26.765701" x="0.000000" y="0.000000" transform="matrix(-0.707107,-0.707107,0.707107,-0.707107,13.6228,32.5488)" />
+	<g id="Group">
+		<path id="Vector" d="M0 0L26.2481 0" stroke="rgb(0,0,0)" stroke-width="0.999746144" transform="matrix(0.707107,-0.707107,0.707107,0.707107,6.74438,25.6704)" />
+		<path id="Vector" d="M13.1225 13.1225L0 13.1225L0 0" fill-rule="nonzero" stroke="rgb(0,0,0)" stroke-width="0.999746144" transform="matrix(-1,0.000118728,0.000118728,-1,25.2358,20.4326)" />
+	</g>
+</svg>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthem-gym</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./images/favicon/site.webmanifest">
+</head>
+
+<body>
+  <header class="header">
+    <a class="header-logo" href="#">
+      <img class="header-logo-image" src="./images/logo.png" alt="Anthem-logo" width="110" height="100" loading="lazy"
+        loading="lazy">
+    </a>
+
+
+     <button class="burger" id="burger" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+    <nav class="header-menu">
+      <ul class="header-menu-list">
+        <li class="header-menu-item">
+          <a class="header-menu-link is-current" href="#direction">Направления</a>
+        </li>
+        <li class="header-menu-item">
+          <a class="header-menu-link" href="#about">О нас</a>
+        </li>
+        <li class="header-menu-item">
+          <a class="header-menu-link" href="#">Тренеры</a>
+        </li>
+        <li class="header-menu-item">
+          <a class="header-menu-link" href="#">Расписание</a>
+        </li>
+        <li class="header-menu-item">
+          <a class="header-menu-link" href="#contacts">Контакты</a>
+        </li>
+      </ul>
+
+    </nav>
+    <div class="header-actions">
+      <button class="header-book-button button" type="button">Связаться</button>
+
+    </div>
+  </header>
+  
+
+  <div class="mobile-menu " id="mobileMenu">
+    <div class="mobile-menu-decor"></div>
+  <nav class="mobile-nav">
+    <a class="header-menu-link" href="#direction">Направления</a>
+    <a class="header-menu-link" href="#about">О нас</a>
+    <a class="header-menu-link" href="#coaches">Тренеры</a>
+    <a class="header-menu-link" href="#schedule">Расписание</a>
+    <a class="header-menu-link" href="#contacts">Контакты</a>
+  </nav>
+</div>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+  <main class="content">
+    <h1 class="visually-hidden">Anthem клуб кикбоксинга и бокса для детей и взрослых в городе Владимире</h1>
+    <section class="banner fade-up">
+      <video class="banner-video" autoplay muted loop playsinline>
+        <source src="./videos/banner-video.MP4" type="video/MP4">
+        <source src="./videos/banner-video-webm.webm" type="video/webm">
+      </video>
+      <h2 class="visually-hidden">Клуб единоборств для взрослых и детей</h2>
+      <div class="banner-body">
+        <div class="banner-info fade-up">
+          Клуб кикбоксинга, бокса <br />
+          и тайского бокса во Владимире
+        </div>
+        <h3 class="banner-title fade-up">ANTHEM</h3>
+        <div class="mobile-button-container fade-up">
+          <a href="https://t.me/ANTHEM_Vladimir" target="_blank"><button class=" cta-border mobile-button">Записаться на
+              тренировку</button></a>
+        </div>
+      </div>
+    </section>
+    <section class="motivation fade-up" id="direction">
+      <h2 class="visually-hidden">О нас</h2>
+      <ul class="motivation-list">
+        <li class="motivation-item fade-up">
+          <div class="motivation-card container">
+            <div class="motivation-card-body">
+              <h3 class="motivation-card-title backdrop-title title-medium" data-title="KIKBOXING">
+                Тренировки по кикбоксингу <br />
+                и тайскому боксу для всех
+                возрастов <br>
+                и уровней подготовки
+              </h3>
+              <a href="#" class="motivation-card-button button transparent fade-up">
+                Присоединиться
+              </a>
+            </div>
+            <img class="motivation-card-image" src="./images/motivation/1.jpg" alt="парни боксируют" width="518"
+              height="760" loading="lazy">
+
+          </div>
+        </li>
+        <li class="motivation-item fade-up">
+          <div class="motivation-card container">
+            <div class="motivation-card-body">
+              <h3 class="motivation-card-title backdrop-title title-medium" data-title="KIDSBOXING">Специальные программы для детей</h3>
+
+              <a href="#" class="motivation-card-button button transparent fade-up">
+                Присоединиться
+              </a>
+            </div>
+            <img class="motivation-card-image" src="./images/motivation/2.jpg"
+              alt="детская рука тянется к боксерской перчатке" width="518" height="760" loading="lazy">
+
+          </div>
+        </li>
+        <li class="motivation-item fade-up">
+          <div class="motivation-card container">
+            <div class="motivation-card-body">
+              <h3 class="motivation-card-title backdrop-title title-medium" data-title="GROUPS">
+                Индивидуальные, СПЛИТ <br />и групповые тренировки для взрослых</h3>
+
+              <a href="#" class="motivation-card-button button transparent fade-up">
+                Присоединиться
+              </a>
+            </div>
+            <img class="motivation-card-image" src="./images/motivation/3.jpg" alt="группа по занятию боксом"
+              width="518" height="760" loading="lazy">
+
+          </div>
+        </li>
+        <li class="motivation-item fade-up">
+          <div class="motivation-card container">
+            <div class="motivation-card-body">
+              <h3 class="motivation-card-title backdrop-title title-medium" data-title="PROFI">
+                Подготовка к соревнованиям для профессионалов <br>
+                 и любителей</h3>
+
+              <a href="#" class="motivation-card-button button transparent fade-up">
+                Присоединиться
+              </a>
+            </div>
+            <img class="motivation-card-image" src="./images/motivation/4.jpg" alt="победа на соревнованиях" width="518"
+              height="760" loading="lazy">
+
+          </div>
+        </li>
+        <li class="motivation-item fade-up">
+          <div class="motivation-card container">
+            <div class="motivation-card-body">
+              <h3 class="motivation-card-title backdrop-title title-medium" data-title="FUNCTIONAL">
+                Занятия по функциональному тренингу</h3>
+
+              <a href="#" class="motivation-card-button button transparent fade-up">
+                Присоединиться
+              </a>
+            </div>
+            <img class="motivation-card-image1" src="./images/motivation/5.jpg" alt="упражнения в спортивном зале"
+              width="518" height="760" loading="lazy">
+
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+
+
+    <section class="join-us fade-up" id="about">
+  <div class="about-layout container">
+     <div class="about-slider">
+    <div class="motivation-slider container-wide fade-up">
+        <img src="./images/family/1.jpg" alt="training people" class="slide active" width="414" height="479">
+        <img src="./images/family/4.jpg" alt="training people" class="slide" width="744" height="479">
+        <img src="./images/family/3.jpg" alt="training people" class="slide" width="396" height="479">
+        <img src="./images/family/2.jpg" alt="training people" class="slide" width="396" height="479">
+        <img src="./images/family/5-1.jpg" alt="training people" class="slide" width="414" height="479">
+        <img src="./images/family/6.jpg" alt="training people" class="slide" width="414" height="479">
+        <img src="./images/family/8.jpg" alt="training people" class="slide" width="414" height="479">
+
+      </div>
+  </div>
+    <div class="about-content">
+      <div class="join-us-form-header">
+      <h2 class="join-us-title fade-up">О НАС</h2>
+      <h3 class="join-us-form-title backdrop-title centered title-big fade-up">
+              Начни сегодня
+       </h3>
+      <div class="join-us-form-subtitle section-description container fade-up">
+              Наши тренеры — опытные профессионалы, которые найдут подход к каждому. В дружной и мотивирующей атмосфере
+              вы сможете достичь своих целей, будь то укрепление здоровья, улучшение физической формы или подготовка к
+              важным соревнованиям. <br />
+              <br>Гибкий график тренировок позволит вам выбрать удобное время для занятий.
+              Присоединяйтесь к нашему клубу и станьте частью нашей спортивной семьи!
+      </div>
+      <button class="join-us-form-button button transparent fade-up" type="submit">Написать нам</button>
+      </div>
+  </div>
+
+ 
+</div>
+
+    </section>
+
+    <section hidden class="coaches fade-up" id="coaches">
+      <div class="coaches-container">
+        <header class="section-header">
+          <h2 class="section-title backdrop-title centered title-big">Наши тренеры</h2>
+          <h3 class="section-description backdrop-title title-medium">
+            Опытные наставники, которые помогут достичь результата
+          </h3>
+        </header>
+
+        <ul class="coaches-list">
+          <li class="coach-card">
+            <div class="coach-photo">
+              <img src="images/coaches/coach-1.jpg" alt="Имя Фамилия — тренер по кикбоксингу">
+            </div>
+
+            <div class="coach-info">
+              <h3 class="coach-name">Имя Фамилия</h3>
+              <p class="coach-role">Кикбоксинг</p>
+              <p class="coach-description">
+                Опыт работы более 10 лет. Подготовка спортсменов к соревнованиям.
+              </p>
+            </div>
+          </li>
+
+          <li class="coach-card">
+            <div class="coach-photo">
+              <img src="images/coaches/coach-1.jpg" alt="Имя Фамилия — тренер по кикбоксингу">
+            </div>
+
+            <div class="coach-info">
+              <h3 class="coach-name">Имя Фамилия</h3>
+              <p class="coach-role">Кикбоксинг</p>
+              <p class="coach-description">
+                Опыт работы более 10 лет. Подготовка спортсменов к соревнованиям.
+              </p>
+            </div>
+          </li>
+
+          <li class="coach-card">
+            <div class="coach-photo">
+              <img src="images/coaches/coach-1.jpg" alt="Имя Фамилия — тренер по кикбоксингу">
+            </div>
+
+            <div class="coach-info">
+              <h3 class="coach-name">Имя Фамилия</h3>
+              <p class="coach-role">Кикбоксинг</p>
+              <p class="coach-description">
+                Опыт работы более 10 лет. Подготовка спортсменов к соревнованиям.
+              </p>
+            </div>
+          </li>
+
+          <li class="coach-card">
+            <div class="coach-photo">
+              <img src="images/coaches/coach-1.jpg" alt="Имя Фамилия — тренер по кикбоксингу">
+            </div>
+
+            <div class="coach-info">
+              <h3 class="coach-name">Имя Фамилия</h3>
+              <p class="coach-role">Кикбоксинг</p>
+              <p class="coach-description">
+                Опыт работы более 10 лет. Подготовка спортсменов к соревнованиям.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="location container-wide fade-up" id="contacts">
+      <div loading="lazy" class="location-map" style="position:relative;overflow:hidden;"><a
+          href="https://yandex.ru/maps/org/anthem/101343757281/?utm_medium=mapframe&utm_source=maps"
+          style="color:#131619;font-size:12px;position:absolute;top:0px;">Anthem</a><a
+          href="https://yandex.ru/maps/192/vladimir/category/sports_club/184107297/?utm_medium=mapframe&utm_source=maps"
+          style="color:#131619;font-size:12px;position:absolute;top:14px;">Спортивный клуб, секция во Владимире</a><a
+          href="https://yandex.ru/maps/192/vladimir/category/fitness_club/184107363/?utm_medium=mapframe&utm_source=maps"
+          style="color:#131619;font-size:12px;position:absolute;top:28px;">Фитнес-клуб во Владимире</a><iframe
+          src="https://yandex.ru/map-widget/v1/?ll=40.380362%2C56.139505&mode=search&oid=101343757281&ol=biz&z=17.53"
+          width="960" height="600" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+      <div class="location-body">
+        <h2 class="location-title title-medium backdrop-title centered" data-title="Findus">
+          Наше расположение
+        </h2>
+        <div class="location-description">
+          <p>Клуб находится в центральной части города
+          </p>
+        </div>
+        <a href="https://yandex.ru/maps/192/vladimir/?ll=40.381357%2C56.138813&mode=routes&rtext=~56.139580%2C40.380229&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D101343757281&z=16.79"
+          target="_blank" class="location-button transparent button">Построить маршрут</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer fade-up">
+    <div class="footer-main">
+      <div class="footer-main-inner container">
+
+        <div class="footer-body">
+          <div class="footer-column fade-up">
+            <h2 class="footer-column-title fade-up">О нас</h2>
+            <p class="footer-about">
+              Спортивный клуб бокса, кик-боксинга, физической подготовки, улучшения формы
+            </p>
+          </div>
+          <div class="footer-column fade-up">
+            <h2 class="footer-column-title">Рабочие часы</h2>
+            <div class="footer-schedule">
+              Понедельник - Пятница<br />
+              <time datetime="08:00/23:30">08:00 - 22:30</time>
+            </div>
+            <div class="footer-schedule">
+              Выходные <br />
+              <time datetime="09:00/22:00">09:00 - 22:00</time>
+            </div>
+          </div>
+          <div class="footer-column fade-up">
+            <h2 class="footer-column-title">Локация</h2>
+            <address class="footer-address">
+              город Владимир, 1-й Кирпичный пр.
+            </address>
+            <div class="footer-contacts fade-up">
+              <ul class="footer-contacts-list">
+                <li class="footer-contacts-item">
+                  <a class="footer-contacts-link" href="tel:+79190249097">+7 (919) 024 90 97</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-column fade-up">
+            <h2 class="footer-column-title has-arrow">Связаться с нами в Телеграм</h2>
+            <a href="https://t.me/ANTHEM_Vladimir" target="_blank"><button
+                class="button transparent fade-up">Telegram</button></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-extra">
+      <div class="footer-extra-inner container">
+        <div class="footer-copyright">
+          © <time datetime="2025">2025</time> Shuga-coding, Все права защищены | Политика конфиденциальности
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+  // ===== 1. Анимация fade-up (появление элементов при скролле) =====
+  const items = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15 // Элемент появляется когда 15% его видно
+  });
+
+  items.forEach(item => observer.observe(item));
+
+//burgerButton
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow =
+      menu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', closeMenu)
+  );
+
+  function closeMenu() {
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+/*==== SLIDER ====*/
+document.querySelectorAll('.motivation-slider').forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    let current = 0;
+    let startX = 0;
+    let interval;
+
+    function showSlide(index) {
+      slides[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(current + 1);
+    }
+
+    function prevSlide() {
+      showSlide(current - 1);
+    }
+
+    // ===== AUTOPLAY =====
+    function startAutoPlay() {
+      interval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(interval);
+    }
+
+    startAutoPlay();
+
+    // ===== SWIPE =====
+    slider.addEventListener('touchstart', e => {
+      stopAutoPlay();
+      startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (diff > 50) nextSlide();
+      if (diff < -50) prevSlide();
+
+      startAutoPlay();
+    });
+
+    // ===== OPEN FULLSCREEN =====
+    slides.forEach(slide => {
+      slide.addEventListener('click', () => {
+        openLightbox(slide.src);
+      });
+    });
+  });
+
+  // ===== LIGHTBOX =====
+  document.addEventListener('DOMContentLoaded', () => {
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+
+  document.querySelectorAll('.motivation-slider').forEach(slider => {
+    const slides = slider.querySelectorAll('.slide');
+    let current = 0;
+    let startX = 0;
+    let interval;
+
+    if (!slides.length) return;
+
+    function showSlide(index) {
+      slides[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    function next() { showSlide(current + 1); }
+    function prev() { showSlide(current - 1); }
+
+    // autoplay
+    function startAuto() {
+      interval = setInterval(next, 3000);
+    }
+
+    function stopAuto() {
+      clearInterval(interval);
+    }
+
+    startAuto();
+
+    // swipe
+    slider.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      stopAuto();
+    });
+
+    slider.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (diff > 50) next();
+      if (diff < -50) prev();
+      startAuto();
+    });
+
+    // fullscreen
+    slides.forEach(slide => {
+      slide.addEventListener('click', () => {
+        lightboxImage.src = slide.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  });
+
+  // close lightbox
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+});
+</script>
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImage" src="" alt="">
+</div>
+</body>
+
+</html>
