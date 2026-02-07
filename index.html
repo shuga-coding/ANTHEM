@@ -209,7 +209,61 @@
  
 </div>
 
-    </section>
+</section>
+
+
+
+<section id="coaches" class="coaches-section fade-up">
+ <div class="coaches-container container">
+    <h2 class="coaches-section-title backdrop-title ">Наши тренеры</h2>
+
+    <div class="coaches-slider fade-up">
+      
+      <div class="coaches-track">
+
+        <div class="coach-card">
+          <div class="coach-photo">
+            <img src="path/to/photo1.jpg" alt="">
+          </div>
+          <h3 class="coach-name">Имя Фамилия</h3>
+          <p class="coach-role">Бокс</p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-photo">
+            <img src="path/to/photo2.jpg" alt="">
+          </div>
+          <h3 class="coach-name">Имя Фамилия</h3>
+          <p class="coach-role">Кикбоксинг</p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-photo">
+            <img src="path/to/photo3.jpg" alt="">
+          </div>
+          <h3 class="coach-name">Имя Фамилия</h3>
+          <p class="coach-role">Тайский бокс</p>
+        </div>
+
+        <div class="coach-card">
+          <div class="coach-photo">
+            <img src="path/to/photo4.jpg" alt="">
+          </div>
+          <h3 class="coach-name">Имя Фамилия</h3>
+          <p class="coach-role">Функциональный тренинг</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
     <section hidden class="coaches fade-up" id="coaches">
       <div class="coaches-container">
@@ -514,6 +568,43 @@ document.querySelectorAll('.motivation-slider').forEach(slider => {
     document.body.style.overflow = '';
   });
 
+});
+
+
+// скрипт для картоек тренеров
+const track = document.querySelector('.coaches-track');
+
+let startX = 0;
+let currentX = 0;
+let index = 0;
+
+const cards = document.querySelectorAll('.coach-card');
+
+function updateSlider() {
+  const cardWidth = cards[0].offsetWidth + 16;
+  track.style.transform = `translateX(${-index * cardWidth}px)`;
+}
+
+track.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchmove', e => {
+  currentX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', () => {
+  const diff = startX - currentX;
+
+  if (diff > 50 && index < cards.length - 1) {
+    index++;
+  }
+
+  if (diff < -50 && index > 0) {
+    index--;
+  }
+
+  updateSlider();
 });
 </script>
 <div class="lightbox" id="lightbox">
