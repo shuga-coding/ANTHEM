@@ -572,65 +572,11 @@ document.querySelectorAll('.motivation-slider').forEach(slider => {
 
 
 // скрипт для картоек тренеров
-(function () {
-  const slider = document.querySelector('.coaches-slider');
-  const track = slider.querySelector('.coaches-track');
-  const cards = track.querySelectorAll('.coach-card');
+const slider = document.querySelector('.coaches-slider');
 
-  if (!slider || cards.length === 0) return;
-
-  let index = 0;
-  let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let isDragging = false;
-  let cardWidth = cards[0].offsetWidth + 16;
-
-  function setPosition() {
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  function setIndexByTranslate() {
-    index = Math.round(Math.abs(currentTranslate) / cardWidth);
-    index = Math.max(0, Math.min(index, cards.length - 1));
-  }
-
-  function snapToCard() {
-    currentTranslate = -index * cardWidth;
-    prevTranslate = currentTranslate;
-    track.style.transition = 'transform 0.3s ease';
-    setPosition();
-  }
-
-  function touchStart(e) {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    track.style.transition = 'none';
-  }
-
-  function touchMove(e) {
-    if (!isDragging) return;
-    const currentX = e.touches[0].clientX;
-    const delta = currentX - startX;
-    currentTranslate = prevTranslate + delta;
-    setPosition();
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    setIndexByTranslate();
-    snapToCard();
-  }
-
-  track.addEventListener('touchstart', touchStart, { passive: true });
-  track.addEventListener('touchmove', touchMove, { passive: true });
-  track.addEventListener('touchend', touchEnd);
-
-  window.addEventListener('resize', () => {
-    cardWidth = cards[0].offsetWidth + 16;
-    snapToCard();
-  });
-})();
+window.addEventListener('orientationchange', () => {
+  slider.scrollLeft = slider.scrollLeft;
+});
 </script>
 <div class="lightbox" id="lightbox">
   <img id="lightboxImage" src="" alt="">
