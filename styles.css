@@ -1517,20 +1517,25 @@ display: none;
   margin-bottom: 40px
 }
 
-  .coaches-slider {
-    overflow: hidden;
+   .coaches-slider {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+  }
+
+  .coaches-slider::-webkit-scrollbar {
+    display: none;
   }
 
   .coaches-track {
     display: flex;
     gap: 16px;
-    transition: transform 0.3s ease;
-    will-change: transform;
+    padding: 0 20px;
   }
 
   .coach-card {
     flex: 0 0 85%;
-    max-width: 85%;
+    scroll-snap-align: center;
   }
-
 }
