@@ -993,7 +993,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.6);
   backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
@@ -1679,8 +1679,10 @@ display: none;
 
   .coaches-track {
     display: flex;
-    gap: 40px;
-    padding: 0 20px;
+    gap: 30px;
+
+    justify-content: space-between;
+    align-items: start;
   }
 
   .coach-card {
@@ -1690,10 +1692,7 @@ display: none;
   .coaches-slider{
     display: block;
   }
-  .coaches-track{
-    justify-content: start;
-    align-items: start;
-  }
+
 
   .coach-modal{
     align-items: flex-end;
