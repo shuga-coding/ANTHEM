@@ -1660,6 +1660,10 @@ display: none;
   margin-bottom: 40px
 }
 
+.coaches-section-title{
+  font-size: 30px;
+}
+
    .coaches-slider {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1673,7 +1677,7 @@ display: none;
 
   .coaches-track {
     display: flex;
-    gap: 16px;
+    gap: 40px;
     padding: 0 20px;
   }
 
