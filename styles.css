@@ -1209,6 +1209,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   font-size: 14px;
   color: var(--color-lite-gray);
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .coaches-button{
@@ -1250,7 +1251,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 }
 
 .coach-modal__title {
-
+  display: inline-flex;
   margin-bottom: 20px;
   font-size: 20px;
   text-transform: uppercase;
