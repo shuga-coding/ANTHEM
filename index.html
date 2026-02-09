@@ -205,12 +205,20 @@
   <div class="about-layout container">
      <div class="about-slider">
     <div class="motivation-slider container-wide fade-up">
+
+       <!-- Стрелки внутри слайдера -->
+    <button class="slider-prev" aria-label="Предыдущий слайд">‹</button>
+    <button class="slider-next" aria-label="Следующий слайд">›</button>
+
         <img src="./images/family/1.jpg" alt="training people" class="slide active" width="414" height="479">
         <img src="./images/family/4.jpg" alt="training people" class="slide" width="744" height="479">
         <img src="./images/family/3.jpg" alt="training people" class="slide" width="396" height="479">
         <img src="./images/family/5-1.jpg" alt="training people" class="slide" width="414" height="479">
         <img src="./images/family/6.jpg" alt="training people" class="slide" width="414" height="479">
         <img src="./images/family/8.jpg" alt="training people" class="slide" width="414" height="479">
+        <img src="./images/family/9.jpg" alt="training people" class="slide" width="414" height="479">
+        <img src="./images/family/10.jpg" alt="training people" class="slide" width="414" height="479">
+        <img src="./images/family/11.jpg" alt="training people" class="slide" width="414" height="479">
 
       </div>
   </div>
@@ -449,33 +457,82 @@
   }
 
 /*==== SLIDER ====*/
+/*==== SLIDER ====*/
 document.querySelectorAll('.motivation-slider').forEach(slider => {
     const slides = slider.querySelectorAll('.slide');
     let current = 0;
     let startX = 0;
     let interval;
+    
+    // Находим кнопки стрелок
+    const sliderContainer = slider.closest('.about-slider');
+    const prevBtn = sliderContainer?.querySelector('.slider-prev');
+    const nextBtn = sliderContainer?.querySelector('.slider-next');
 
-    function showSlide(index) {
-      slides[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
+    // Функция для показа слайда с анимацией
+    function showSlide(index, direction = 'next') {
+        // Убираем активный класс с текущего слайда
+        slides[current].classList.remove('active');
+        slides[current].classList.remove('slide-in-left');
+        slides[current].classList.remove('slide-in-right');
+        
+        // Определяем новый индекс с бесконечной прокруткой
+        let newIndex = index;
+        if (newIndex < 0) {
+            newIndex = slides.length - 1; // если ушли в минус, идем к последнему слайду
+        } else if (newIndex >= slides.length) {
+            newIndex = 0; // если превысили количество слайдов, идем к первому
+        }
+        
+        // Применяем анимацию в зависимости от направления
+        if (direction === 'prev') {
+            slides[newIndex].classList.add('slide-in-left');
+        } else {
+            slides[newIndex].classList.add('slide-in-right');
+        }
+        
+        // Устанавливаем новый слайд как активный
+        current = newIndex;
+        slides[current].classList.add('active');
     }
 
+    // Функции для навигации
     function nextSlide() {
-      showSlide(current + 1);
+        showSlide(current + 1, 'next');
     }
 
     function prevSlide() {
-      showSlide(current - 1);
+        showSlide(current - 1, 'prev');
+    }
+    
+    // ===== ОБРАБОТКА СТРЕЛОК =====
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        stopAutoPlay();
+        prevSlide();
+        startAutoPlay();
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        stopAutoPlay();
+        nextSlide();
+        startAutoPlay();
+      });
     }
 
     // ===== AUTOPLAY =====
     function startAutoPlay() {
-      interval = setInterval(nextSlide, 3000);
+        // Очищаем предыдущий интервал, если он был
+        if (interval) clearInterval(interval);
+        interval = setInterval(nextSlide, 3000);
     }
 
     function stopAutoPlay() {
-      clearInterval(interval);
+        clearInterval(interval);
     }
 
     startAutoPlay();
@@ -490,19 +547,131 @@ document.querySelectorAll('.motivation-slider').forEach(slider => {
       const endX = e.changedTouches[0].clientX;
       const diff = startX - endX;
 
-      if (diff > 50) nextSlide();
-      if (diff < -50) prevSlide();
+      if (diff > 50) {
+          // Свайп влево = следующий слайд
+          nextSlide();
+      } else if (diff < -50) {
+          // Свайп вправо = предыдущий слайд
+          prevSlide();
+      }
 
       startAutoPlay();
     });
+    
+    // ===== PAUSE ON HOVER ===== (опционально)
+    slider.addEventListener('mouseenter', stopAutoPlay);
+    slider.addEventListener('mouseleave', startAutoPlay);
+    
+    // Стрелки тоже можно добавить в паузу при наведении
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('mouseenter', stopAutoPlay);
+        nextBtn.addEventListener('mouseenter', stopAutoPlay);
+        prevBtn.addEventListener('mouseleave', startAutoPlay);
+        nextBtn.addEventListener('mouseleave', startAutoPlay);
+    }
 
     // ===== OPEN FULLSCREEN =====
     slides.forEach(slide => {
       slide.addEventListener('click', () => {
-        openLightbox(slide.src);
+        // Используем существующую функцию openLightbox или создаем новую
+        if (typeof openLightbox === 'function') {
+            openLightbox(slide.src);
+        } else {
+            // Fallback если функция не определена
+            lightboxImage.src = slide.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
       });
     });
+    
+    // ===== KEYBOARD NAVIGATION ===== (опционально, улучшает доступность)
+    document.addEventListener('keydown', (e) => {
+        // Проверяем, находится ли слайдер в фокусе или виден
+        const isSliderVisible = slider.getBoundingClientRect().top < window.innerHeight && 
+                               slider.getBoundingClientRect().bottom > 0;
+        
+        if (isSliderVisible) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+            }
+        }
+    });
+    
+    // ===== CLEANUP =====
+    // Функция для очистки при удалении слайдера со страницы
+    function cleanup() {
+        stopAutoPlay();
+        if (prevBtn) {
+            prevBtn.removeEventListener('click', prevSlide);
+            prevBtn.removeEventListener('mouseenter', stopAutoPlay);
+            prevBtn.removeEventListener('mouseleave', startAutoPlay);
+        }
+        if (nextBtn) {
+            nextBtn.removeEventListener('click', nextSlide);
+            nextBtn.removeEventListener('mouseenter', stopAutoPlay);
+            nextBtn.removeEventListener('mouseleave', startAutoPlay);
+        }
+        slider.removeEventListener('touchstart', handleTouchStart);
+        slider.removeEventListener('touchend', handleTouchEnd);
+        slider.removeEventListener('mouseenter', stopAutoPlay);
+        slider.removeEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Сохраняем ссылки на обработчики для возможности очистки
+    const handleTouchStart = (e) => {
+        stopAutoPlay();
+        startX = e.touches[0].clientX;
+    };
+    
+    const handleTouchEnd = (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (diff > 50) nextSlide();
+        if (diff < -50) prevSlide();
+
+        startAutoPlay();
+    };
+    
+    // Добавляем слушатели с сохраненными ссылками
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchend', handleTouchEnd);
+});
+
+// ===== LIGHTBOX ===== (оставляем существующий код, но добавляем проверку)
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  
+  // Проверяем, существует ли lightbox
+  if (!lightbox || !lightboxImage) return;
+
+  // Функция для открытия лайтбокса (если используется в слайдере)
+  window.openLightbox = function(src) {
+    lightboxImage.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Закрытие лайтбокса
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
   });
+  
+  // Закрытие лайтбокса по клавише Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
 
   // ===== LIGHTBOX =====
   document.addEventListener('DOMContentLoaded', () => {
