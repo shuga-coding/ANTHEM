@@ -1371,7 +1371,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
     max-width: 300px;
   }
   .coach-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 
 }
 }
@@ -1692,7 +1692,7 @@ display: none;
 
   .coaches-track {
     display: flex;
-    gap: 40px;
+    gap: 20px;
     padding: 0 20px;
   }
 
