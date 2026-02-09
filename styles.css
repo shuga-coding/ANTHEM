@@ -1190,7 +1190,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 /* Фото тренера */
 .coach-photo img {
-  width: 100;
+  width: 100%;
   height: auto;
   border-radius: 6px;
   object-fit: cover;
@@ -1693,7 +1693,6 @@ display: none;
   .coaches-track {
     display: flex;
     gap: 20px;
-    padding: 0 20px;
   }
 
   .coach-card {
