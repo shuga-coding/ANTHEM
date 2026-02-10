@@ -606,10 +606,12 @@ column-gap: 14px;
 }
 .motivation-item:nth-child(even) {
   background-color: var(--color-dark-alternate);
+  z-index: -1;
 }
 
 .motivation-item:nth-child(even) .motivation-card{
   flex-direction: row-reverse;
+  z-index: -2;
   
 }
 
@@ -619,16 +621,19 @@ column-gap: 14px;
   align-items: center;
   column-gap: clamp(30px, 10.42vw, 200px);
   position: relative;
+  z-index: 1;
 }
 
 .motivation-card-image {
   margin-block: -20px;
   height: auto;
-
+  border-radius: 10px;
   filter: grayscale(100%);
   transition: filter 1s ease;
 
   transform: scale(1.03);
+
+  z-index: 10;
 }
 .motivation-card.is-active .motivation-card-image {
   filter: grayscale(0%);
@@ -1626,6 +1631,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
     align-items: center;
     width: 300px;
     padding-left: 0px;
+    margin-top: 30px;
   }
   
   .motivation-card-title{
