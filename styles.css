@@ -497,13 +497,7 @@ select.input:invalid{
   font-size: 12px;
   letter-spacing: 1.2px;
 }
-.header-menu-link.is-current::after{
-  content:"";
-  width: 5px;
-  aspect-ratio: 1;
-  background: currentColor;
-  border-radius: 50%;
-}
+
 .header-actions{
   display: flex;
   column-gap: 40px;
@@ -1404,6 +1398,69 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   transition: width 0.1s ease;
 }
 
+.shedule-title{
+  display: inline;
+  align-items: center;
+  font-size: clamp(40px, 4.2vw, 90px);
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.schedule {
+  text-align: center;
+  position: relative;
+  background-color: var(--color-dark-alternate);
+  padding: 60px 20px;
+  color: #fff;
+  background: var(--color-dark-alternate);
+}
+
+.schedule__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  
+}
+
+.schedule__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 40px auto;
+ 
+}
+
+
+.schedule__item {
+  
+  background: rgba(0, 0, 0, 0.4);
+  min-height: 135px;
+}
+.schedule__item--sunday{
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.schedule__day {
+  background: #f5c400;
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule__events {
+  padding: 15px 20px;
+}
+
+.schedule__events p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
 
 @media(max-width: 1919px){
   .motivation-card-image .motivation-card-image1{
@@ -1794,5 +1851,11 @@ display: none;
   .coach-modal__close {
     top: 10px;
     right: 10px;
+  }
+  .schedule__grid {
+    grid-template-columns: 2fr;
+  }
+  .schedule__events{
+    text-align: center;
   }
 }
