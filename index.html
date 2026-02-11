@@ -23,6 +23,14 @@
 
 <body>
 
+<!--прелоадер-->
+<div id="preloader">
+  <div class="preloader-inner">
+    <img src="./images/logo.png" alt="ANTHEM" class="preloader-logo">
+  </div>
+</div>
+
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -321,9 +329,9 @@
   </div>
 </section>
 <section id="shedule" class="schedule">
-  <h2 class="shedule-title backdrop-title title-big">Расписание групповых <br>тренировок</h2>
+  <h2 class="shedule-title backdrop-title title-big">Расписание <br>тренировок</h2>
 <div class="schedule__grid">
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">ПОНЕДЕЛЬНИК</div>
     <div class="schedule__events">
       <p><strong>Кикбоксинг дети (7–9 лет)</strong><br><time datetime="14:45–15:45">14:45–15:45</time></p>
@@ -333,7 +341,7 @@
     </div>
   </div>
 
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">ВТОРНИК</div>
     <div class="schedule__events">
 <p><strong>Кикбоксинг дети (4–6 лет)</strong><br><time datetime="14:45–15:45">14:45–15:45</time></p>
@@ -343,7 +351,7 @@
     </div>
   </div>
 
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">СРЕДА</div>
     <div class="schedule__events">
     <p><strong>Кикбоксинг дети (7–9 лет)</strong><br><time datetime="14:45–15:45">14:45–15:45</time></p>
@@ -353,7 +361,7 @@
     </div>
   </div>
 
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">ЧЕТВЕРГ</div>
     <div class="schedule__events">
       <p><strong>Кикбоксинг дети (4–6 лет)</strong><br><time datetime="14:45–15:45">14:45–15:45</time></p>
@@ -363,7 +371,7 @@
     </div>
   </div>
 
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">ПЯТНИЦА</div>
     <div class="schedule__events">
       <p><strong>Кикбоксинг дети (7–9 лет)</strong><br><time datetime="14:45–15:45">14:45–15:45</time></p>
@@ -373,7 +381,7 @@
     </div>
   </div>
 
-  <div class="schedule__item">
+  <div class="schedule__item fade-up">
     <div class="schedule__day">СУББОТА</div>
     <div class="schedule__events">
       <p><strong>Функциональный тренинг </strong><br> <time datetime="11:00–12:00">11:00–12:00</p></time>
@@ -381,7 +389,7 @@
     </div>
   </div>
 
-  <div class="schedule__item schedule__item--sunday">
+  <div class="schedule__item fade-up schedule__item--sunday">
     <div class="schedule__day">ВОСТКРЕСЕНЬЕ</div>
     <div class="schedule__events">
       <p><strong>СВОБОДНОЕ ПОСЕЩЕНИЕ</strong></p>
@@ -488,6 +496,19 @@
 </div>
 
 <script>
+
+//===== Прелоадер =====
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.addEventListener("transitionend", () => {
+      preloader.remove();
+    });
+  }, 800);
+});
+
+
  // ===== Анимация motivation-card ====
   const cards = document.querySelectorAll('.motivation-card');
 

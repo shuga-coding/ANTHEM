@@ -468,6 +468,11 @@ select.input:invalid{
   background-color: var(--color-yelow-anthem);
   transition-duration: 0.2s;
 }
+
+ #preloader {
+    display: none;
+  }
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -693,6 +698,7 @@ height: auto;
 }
 .join-us{
   background-color: var(--color-dark-alternate);
+
   
 }
 
@@ -760,7 +766,7 @@ grid-template-columns: repeat(2, 1fr);
   align-items: center;
   padding: 80px 15px;
   text-align: center;
-  background-color: var(--color-dark-alternate);
+  background-color: var(--color-dark);
 
 }
 
@@ -1401,7 +1407,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 .shedule-title{
   display: inline;
   align-items: center;
-  font-size: clamp(40px, 4.2vw, 90px);
+  font-size: clamp(30px, 4.2vw, 90px);
   line-height: 1;
   text-align: center;
   margin-bottom: 40px;
@@ -1427,7 +1433,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 60px auto;
  
 }
 
@@ -1580,6 +1586,41 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 
 @media (max-width: 767px) {
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-dark-alternate);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* контейнер под анимацию */
+.preloader-inner {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* логотип */
+.preloader-logo {
+  width: 100px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+
   .burger {
     display: block;
   }
@@ -1664,17 +1705,21 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   flex-direction: column-reverse;
 }
   .motivation-card-image {
-    max-width: 90%;
+    max-width: 80%;
   }
   .motivation-card-image1{
-    max-width: 90%;
+    max-width: 80%;
   }
   .motivation-card{
-    padding-block: 30px;
-    row-gap: 30px;
+    padding-block: 40px;
+    row-gap: 50px;
   }
 
-  
+
+  .motivation-card-title:not(:last-child){
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
 
   .motivation-card-description:not(:last-child){
     margin-bottom: 20px;
@@ -1736,6 +1781,14 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   align-items: center;
   row-gap: 20px;
 }
+
+  .join-us-form-header {
+    order: 1;
+  }
+
+  .join-us-slider {
+    order: 2;
+  }
 
 .about-layout{
   grid-template-columns: 1fr;
@@ -1852,8 +1905,13 @@ display: none;
     top: 10px;
     right: 10px;
   }
+.schedule{
+  padding: 30px 50px ;
+}
+
   .schedule__grid {
     grid-template-columns: 2fr;
+    margin-top: 20px;
   }
   .schedule__events{
     text-align: center;
