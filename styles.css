@@ -1465,7 +1465,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 .schedule__events p {
   margin: 0 0 8px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
 }
 
